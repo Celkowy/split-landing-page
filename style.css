@@ -95,7 +95,7 @@ button:focus {
 
 .btn-left:active,
 .btn-right:active {
-  transform: scale(1.02);
+  transform: scale(0.98);
 }
 
 .outline-right,
