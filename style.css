@@ -98,6 +98,11 @@ button:focus {
   transform: scale(0.98);
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 .outline-right,
 .outline-left {
   z-index: 0;
