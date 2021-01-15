@@ -21,6 +21,22 @@ body {
   height: 100%;
 }
 
+.container.hover-left .left {
+  transform: translateX(-25%);
+}
+
+.container.hover-left .right {
+  transform: translateX(20%);
+}
+
+.container.hover-right .left {
+  transform: translateX(-20%);
+}
+
+.container.hover-right .right {
+  transform: translateX(-40%);
+}
+
 .radio-wrap {
   height: 100%;
 }
@@ -55,7 +71,7 @@ body {
   background-color: rgba(43, 43, 43, 0.35);
 }
 
-button {
+a {
   position: absolute;
   background-color: transparent;
   border: 5px solid white;
@@ -66,19 +82,12 @@ button {
   padding: 15px;
   border-radius: 5px;
   font-family: 'Lobster', cursive;
+  text-align: center;
+  text-decoration: none;
+  color: white;
 }
 
-button:focus {
-  outline: none;
-}
-
-.btn-right,
-.btn-left {
-  z-index: 2;
-  cursor: pointer;
-}
-
-.btn-right {
+.a-right {
   transform: translateX(0);
   border-color: white;
   border-bottom-color: #63cbe8;
@@ -86,73 +95,51 @@ button:focus {
   top: 75%;
 }
 
-.btn-left {
+.a-left {
   transform: translateX(0);
   top: 60%;
   left: 65%;
   border-bottom-color: black;
 }
 
-.btn-left:active,
-.btn-right:active {
-  transform: scale(0.98);
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-.outline-right,
-.outline-left {
-  z-index: 0;
-  color: transparent;
-}
-
-.outline-right {
-  top: calc(75% - 10px);
-  left: calc(50% + 165px);
+.a-right::after,
+.a-left::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  width: 270px;
+  height: 68px;
+  border-radius: 5px;
+  padding: 15px;
+  border: 5px solid white;
   border-bottom-color: #fbb613;
 }
 
-.outline-left {
-  top: calc(60% - 10px);
-  left: calc(65% + 165px);
+.a-left::after {
   border-bottom-color: #b70100;
 }
 
-.container.hover-left .left {
-  transform: translateX(-25%);
-}
-
-.container.hover-left .right {
-  transform: translateX(20%);
-}
-
-.container.hover-right .left {
-  transform: translateX(-20%);
-}
-
-.container.hover-right .right {
-  transform: translateX(-40%);
+.a-left:active,
+.a-right:active {
+  transform: scale(0.98);
 }
 
 @media (max-width: 1024px) {
-  .btn-left,
-  .btn-right {
+  .a-left,
+  .a-right {
     left: 30%;
     font-size: 32px;
     width: 175px;
-    border-color: white;
   }
 
-  .btn-right {
-    left: 30%;
+  .a-right::after,
+  .a-left::after {
+    width: 135px;
+    height: 40px;
+  }
+
+  .a-right {
     top: 75%;
-  }
-
-  .outline-right,
-  .outline-left {
-    display: none;
   }
 }
